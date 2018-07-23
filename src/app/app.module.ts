@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -9,15 +10,20 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { RestapiServiceProvider } from '../providers/restapi-service/restapi-service';
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage
   ],
-  imports: [
+  imports: [ 
+    FormsModule, 
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestapiServiceProvider
   ]
 })
 export class AppModule {}
