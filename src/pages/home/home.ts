@@ -21,6 +21,10 @@ export class HomePage {
 	  .then(data => {
 	  	console.log(data);
 	    this.ingresos = data;
+	    this.mat = data.Matriculas;
+	    this.pen = data.Pensiones;
+	    this.fta = data.Fiestas;
+	    this.alm = data.Almacen;
 	  });
 	}
 

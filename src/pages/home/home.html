@@ -31,7 +31,30 @@
   <h2>Ingresos del Periodo:</h2>
   <ion-list>
     <ion-item >
-      {{ingresos}}
+      <ion-grid>
+        <ion-row>
+          <ion-col> Concepto</ion-col>
+          <ion-col> Valor </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Matriculas </ion-col>
+          <ion-col> {{mat}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Pensiones </ion-col>
+          <ion-col> {{pen}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Almacen </ion-col>
+          <ion-col> {{alm}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Fiestas </ion-col>
+          <ion-col> {{fta}} </ion-col>
+        </ion-row>
+
+      </ion-grid>
+      
     </ion-item>
   </ion-list>
 
