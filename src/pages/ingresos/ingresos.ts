@@ -24,6 +24,7 @@ export class IngresosPage {
 	total: any;
 	totalNoIva: any;
 	iva: any;
+	data: any;
 
 	
 
