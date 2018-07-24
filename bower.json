@@ -1,0 +1,20 @@
+{
+  "name": "reservas1",
+  "description": "An Ionic project",
+  "main": "",
+  "authors": [
+    "Ionic Framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/alejomejia1/reservas",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic-datepicker": "^1.2.1"
+  }
+}

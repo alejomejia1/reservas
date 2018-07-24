@@ -17,6 +17,14 @@ export class IngresosPage {
 	fechaini: any;
 	fechafin: any;
 	periodo: any;
+	mat: any;
+	pen: any;
+	alm: any;
+	fta: any;
+	total: any;
+	totalNoIva: any;
+	iva: any;
+
 	
 
 	getIngresos(fechaini, fechafin, apiKey) {
@@ -64,61 +72,42 @@ export class IngresosPage {
     
 	}
 
-	thisMonth() {
-		let end = moment().endOf('month').format('YYYY-MM-DD');
-		let start = moment().startOf('month').format('YYYY-MM-DD');
+
+	periodChange(val: any) {
+		let end;
+		let start;
+
+		switch (val) {
+			case "0":
+				start = moment().subtract(29, 'days').format('YYYY-MM-DD');
+				end   = moment().format('YYYY-MM-DD');
+				break;
+			case "1": // Este Mes
+				start = moment().startOf('month').format('YYYY-MM-DD');
+				end   = moment().endOf('month').format('YYYY-MM-DD');
+				break;
+			case "2": // Mes Anterior
+				start = moment().subtract(1, 'month').startOf('month').format('YYYY-MM-DD');
+				end   = moment().subtract(1, 'month').endOf('month').format('YYYY-MM-DD');
+				break;
+			case "3": // Este Año
+				start = moment().startOf('year').format('YYYY-MM-DD');
+				end   = moment().endOf('month').format('YYYY-MM-DD');
+				break;
+			case "4": // Año Anterior
+				start = moment().subtract(1, 'year').startOf('year').format('YYYY-MM-DD');
+				end   = moment().subtract(1, 'year').endOf('year').format('YYYY-MM-DD');
+				break;
+			default: // Default
+				start = moment().subtract(29, 'days').format('YYYY-MM-DD');
+				end   = moment().format('YYYY-MM-DD');
+				break;
+		}
+
 		this.fechaini = start;
 		this.fechafin = end;
 		this.getIngresos(start ,end,'9tMS1A8G5QY4N84');
-
-	}
-
-
-	lastMonth() {
-		let end = moment().subtract(1, 'month').endOf('month').format('YYYY-MM-DD');
-		let start = moment().subtract(1, 'month').startOf('month').format('YYYY-MM-DD');
-		this.fechaini = start;
-		this.fechafin = end;
-		this.getIngresos(start ,end,'9tMS1A8G5QY4N84');
-
-	}
-
-	thisYear() {
-		let end = moment().endOf('month').format('YYYY-MM-DD');
-		let start = moment().startOf('year').format('YYYY-MM-DD');
-		this.fechaini = start;
-		this.fechafin = end;
-		this.getIngresos(start ,end,'9tMS1A8G5QY4N84');
-
-	}
-
-	lastYear() {
-		let end = moment().subtract(1, 'year').endOf('year').format('YYYY-MM-DD');
-		let start = moment().subtract(1, 'year').startOf('year').format('YYYY-MM-DD');
-		this.fechaini = start;
-		this.fechafin = end;
-		this.getIngresos(start ,end,'9tMS1A8G5QY4N84');
-
-	}
-
-	selectBox() {
-
-		console.log(this.periodo.value);
-		// switch (variable) {
-		// 	case "value":
-		// 		// code...
-		// 		break;
-			
-		// 	default:
-		// 		// code...
-		// 		break;
-		// }
-		// let end = moment().subtract(1, 'year').endOf('year').format('YYYY-MM-DD');
-		// let start = moment().subtract(1, 'year').startOf('year').format('YYYY-MM-DD');
-		// this.fechaini = start;
-		// this.fechafin = end;
-		// this.getIngresos(start ,end,'9tMS1A8G5QY4N84');
-
+		
 	}
 
 	

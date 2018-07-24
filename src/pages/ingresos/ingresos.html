@@ -9,37 +9,15 @@
 
 <ion-content padding>
 
- <!--  <ion-item>
-    <div class="list" (click)='selectBox();'>
-    <label class="item item-input item-select item-dark">
-      <div class="input-label">
-        Selección rápida:
-      </div>
-      <select [(ngModel)]="periodo">
-        <option selected value=0>Ultimos 30 dias</option>
-        <option value=1>Este mes</option>
-        <option value=2>Mes anterior</option>
-        <option value=3>Este Año</option>
-        <option value=4>Año anterior</option>
-      </select>
-    </label>
-
-</div>
-  </ion-item> -->
-
   <ion-item>
-    <button ion-button [color]="secondary" [round]="isRound" (click)='selectBox();'>
-      Este Mes
-    </button>
-    <button ion-button [color]="secondary" [round]="isRound" (click)='lastMonth();'>
-      Mes pasado
-    </button>
-    <button ion-button [color]="secondary" [round]="isRound" (click)='thisYear();'>
-      Este Año
-    </button>
-    <button ion-button [color]="secondary" [round]="isRound" (click)='lastYear();'>
-      Año pasado
-    </button>
+    <ion-label>Periodo</ion-label>
+    <ion-select (ionChange)="periodChange($event)">
+      <ion-option value="0" selected>Ultimos 30 dias</ion-option>
+      <ion-option value="1">Este mes</ion-option>
+      <ion-option value="2">Mes Anterior</ion-option>
+      <ion-option value="3">Este año</ion-option>
+      <ion-option value="4">Año Anterior</ion-option>
+    </ion-select>
   </ion-item>
 
   <ion-item>
