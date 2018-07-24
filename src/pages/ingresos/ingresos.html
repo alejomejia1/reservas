@@ -34,23 +34,35 @@
       <ion-grid>
         <ion-row>
           <ion-col> Concepto</ion-col>
-          <ion-col> Valor </ion-col>
+          <ion-col text-right> Valor </ion-col>
         </ion-row>
         <ion-row>
           <ion-col> Matriculas </ion-col>
-          <ion-col> {{mat}} </ion-col>
+          <ion-col text-right> {{mat | currency}} </ion-col>
         </ion-row>
         <ion-row>
           <ion-col> Pensiones </ion-col>
-          <ion-col> {{pen}} </ion-col>
+          <ion-col text-right> {{pen | currency}} </ion-col>
         </ion-row>
         <ion-row>
           <ion-col> Almacen </ion-col>
-          <ion-col> {{alm}} </ion-col>
+          <ion-col text-right> {{alm | currency}} </ion-col>
         </ion-row>
         <ion-row>
           <ion-col> Fiestas </ion-col>
-          <ion-col> {{fta}} </ion-col>
+          <ion-col text-right> {{fta | currency}} </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> <b> Total Sin IVA</b> </ion-col>
+          <ion-col text-right> <b> {{totalNoIva | currency}}  </b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> IVA </ion-col>
+          <ion-col text-right> {{iva | currency}}  </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> <b> Total</b> </ion-col>
+          <ion-col text-right> <b> {{total | currency}}  </b></ion-col>
         </ion-row>
 
       </ion-grid>

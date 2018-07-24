@@ -33,7 +33,7 @@ export class RestapiServiceProvider {
         this.data = data;
         resolve(this.data);
       });
-  })
+    })
   }
 
 }

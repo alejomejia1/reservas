@@ -11,18 +11,18 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HomePage } from '../pages/home/home';
+import { IngresosPage } from '../pages/ingresos/ingresos';
 import { ListPage } from '../pages/list/list';
 var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
-        this.rootPage = HomePage;
+        this.rootPage = IngresosPage;
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
-            { title: 'Home', component: HomePage },
+            { title: 'Ingresos', component: IngresosPage },
             { title: 'List', component: ListPage }
         ];
     }

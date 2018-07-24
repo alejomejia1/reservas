@@ -11,14 +11,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-service';
 // import { Http ,Response } from '@angular/http';
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, restapiService) {
+var IngresosPage = /** @class */ (function () {
+    function IngresosPage(navCtrl, restapiService) {
         this.navCtrl = navCtrl;
         this.restapiService = restapiService;
         this.postList = [];
         this.getIngresos('2018-07-01', '2018-07-31', '9tMS1A8G5QY4N84');
     }
-    HomePage.prototype.getIngresos = function (fechaini, fechafin, apiKey) {
+    IngresosPage.prototype.getIngresos = function (fechaini, fechafin, apiKey) {
         var _this = this;
         // console.log('Fechaini: '+ fechaini);
         this.restapiService.getIngresos(fechaini, fechafin, apiKey)
@@ -27,17 +27,17 @@ var HomePage = /** @class */ (function () {
             _this.ingresos = data;
         });
     };
-    HomePage.prototype.openFilters = function () {
+    IngresosPage.prototype.openFilters = function () {
         console.log('crap');
     };
-    HomePage = __decorate([
+    IngresosPage = __decorate([
         Component({
-            selector: 'page-home',
-            templateUrl: 'home.html'
+            selector: 'page-ingresos',
+            templateUrl: 'ingresos.html'
         }),
         __metadata("design:paramtypes", [NavController, RestapiServiceProvider])
-    ], HomePage);
-    return HomePage;
+    ], IngresosPage);
+    return IngresosPage;
 }());
-export { HomePage };
+export { IngresosPage };
 //# sourceMappingURL=home.js.map
