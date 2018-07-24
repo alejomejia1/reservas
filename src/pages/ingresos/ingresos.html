@@ -11,12 +11,16 @@
 
   <ion-item>
     <ion-label>Periodo</ion-label>
-    <ion-select (ionChange)="periodChange($event)">
-      <ion-option value="0" selected>Ultimos 30 dias</ion-option>
-      <ion-option value="1">Este mes</ion-option>
-      <ion-option value="2">Mes Anterior</ion-option>
-      <ion-option value="3">Este año</ion-option>
-      <ion-option value="4">Año Anterior</ion-option>
+    <ion-select (ionChange)="periodChange($event)" interface="popover">
+      <ion-option value="0" selected>Hoy </ion-option>
+      <ion-option value="1">Ayer </ion-option>
+      <ion-option value="2">Este mes</ion-option>
+      <ion-option value="3">Mes Anterior</ion-option>
+      <ion-option value="4">Este año</ion-option>
+      <ion-option value="5">Año Anterior</ion-option>
+      <ion-option value="6">Ultimos 7 dias </ion-option>
+      <ion-option value="7">Ultimos 15 dias </ion-option>
+      <ion-option value="8">Ultimos 30 dias</ion-option>
     </ion-select>
   </ion-item>
 
@@ -76,7 +80,7 @@
         </ion-row>
 
       </ion-grid>
-      
+
     </ion-item>
   </ion-list>
 
