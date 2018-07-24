@@ -3,12 +3,44 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title> Gymboree App Colombia</ion-title>
+    <ion-title> Ingresos Colina </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Gymboree Colina</h3>
+
+ <!--  <ion-item>
+    <div class="list" (click)='selectBox();'>
+    <label class="item item-input item-select item-dark">
+      <div class="input-label">
+        Selección rápida:
+      </div>
+      <select [(ngModel)]="periodo">
+        <option selected value=0>Ultimos 30 dias</option>
+        <option value=1>Este mes</option>
+        <option value=2>Mes anterior</option>
+        <option value=3>Este Año</option>
+        <option value=4>Año anterior</option>
+      </select>
+    </label>
+
+</div>
+  </ion-item> -->
+
+  <ion-item>
+    <button ion-button [color]="secondary" [round]="isRound" (click)='selectBox();'>
+      Este Mes
+    </button>
+    <button ion-button [color]="secondary" [round]="isRound" (click)='lastMonth();'>
+      Mes pasado
+    </button>
+    <button ion-button [color]="secondary" [round]="isRound" (click)='thisYear();'>
+      Este Año
+    </button>
+    <button ion-button [color]="secondary" [round]="isRound" (click)='lastYear();'>
+      Año pasado
+    </button>
+  </ion-item>
 
   <ion-item>
     <ion-label>Fecha Inicio </ion-label>
@@ -53,7 +85,7 @@
           <ion-col text-right> {{fta | currency}} </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col> <b> Total Sin IVA</b> </ion-col>
+          <ion-col> <b> Total sin IVA</b> </ion-col>
           <ion-col text-right> <b> {{totalNoIva | currency}}  </b></ion-col>
         </ion-row>
         <ion-row>
