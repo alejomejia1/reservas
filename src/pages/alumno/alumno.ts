@@ -18,7 +18,11 @@ import { RestapiServiceProvider } from '../../providers/restapi-service/restapi-
 export class AlumnoPage {
 
   alumnosList = [];
-  alumno: any;
+  alumnoData: any;
+  nombre: any;
+  madre: any;
+  padre: any;
+  cumple: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restapiService: RestapiServiceProvider) {
   }
@@ -28,7 +32,6 @@ export class AlumnoPage {
   }
 
   getAlumnos(term, apiKey) {
-
 	  this.restapiService.getSearchJson(term, apiKey)
 	  .then((data: any) => {
 	  	//console.log(data);
@@ -40,16 +43,24 @@ export class AlumnoPage {
 
 	  this.restapiService.getAlumnoData(id, apiKey)
 	  .then((data: any) => {
+      console.log('Data:');
 	  	console.log(data);
-      this.alumno = data;
+      this.nombre =  data.alumno.Alumno.nombres;
+      this.madre =  data.alumno.Alumno.madre;
+      this.padre =  data.alumno.Alumno.padre;
+      this.cumple =  data.alumno.Alumno.fecha_cumpleaños;
+
+      console.log(this.nombre);
+      // console.log('Alumno:');
+      // console.log(this.alumno);
 	  });
 	}
 
   searchAlumnos(val: any) {
     let term = new String(val.value);
     let termLenght = term.length;
-    // console.log(term);
-    //console.log(termLenght);
+    console.log(term);
+    console.log(termLenght);
     if( termLenght > 2) {
       // console.log('Buscando Alumno');
       this.getAlumnos(term,'9tMS1A8G5QY4N84');
